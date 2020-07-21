@@ -1,0 +1,128 @@
+{%  load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ajay Babu Sappa- Curriculum Vitae</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
+<meta charset="UTF-8"> 
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+ 
+</head>
+<body id="top">
+<div id="mainArea" class="quickFade delayFive">
+ <div class="container">
+     <p class="draggable" draggable="true">
+    	<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				{%  for x in i %}
+				<div class="sectionContent">
+					<p>{{x.personal_profile}}</p>
+				</div>
+				 
+				{%endfor%}
+
+			</article>
+			<div class="clear"></div>
+		</section>
+     </p>
+ 
+     <p class="draggable" draggable="true">
+     	<section>
+			<div class="sectionTitle">
+				<h1>Work Experience</h1>
+			</div>
+			{% for y in job1 %}
+			 <div class="sectionContent">
+				<article>
+					<h2>{{y.job_title}}</h2>
+					<p class="subDetails">From:{{y.startdate}} To:{{y.enddate}}</p>
+					<p>{{y.jobdesc}}</p>
+                   
+				</article>
+				
+			</div>
+			<div class="clear"></div>
+			{% endfor %}
+		</section>
+     </p>
+      <p class="draggable" draggable="true">
+      	<section>
+			<div class="sectionTitle">
+				<h1>Key Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					{% for x in skills %}
+					<li>{{x.skill}}</li>
+
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+      </p>
+       <p class="draggable" draggable="true">
+       	<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			{% for  x in contacte1 %}
+			<div class="sectionContent">
+				<article>
+					<h2>{{x.school_name}}</h2>
+					<p class="subDetails">{{x.Degree}} {{x.Field_of_Study}}</p>
+					<p>National institute of Technology,warangal is one of the top 20 best colleges in India.I am currently doing my B.tech degree here.I hope I will get a very good placement here</p>
+				</article>
+				
+				
+			</div>
+
+			<div class="clear"></div>
+			{% endfor %}
+
+		</section>
+       </p>
+        <p class="draggable" draggable="true">
+        	
+		{% for x in adds %}
+		<section>
+			
+			<div class="sectionTitle">
+				<h1>{{x.field_name|safe}}</h1>
+			</div>
+			
+			<div class="sectionContent">
+			<article>
+		      
+		      <h2>{{x.title|safe}}</h2>
+
+		      <p class="subDetails">{{x.explanation|safe}}</p>
+
+		      </article>
+
+			</div>
+
+			<div class="clear"></div>
+			
+		</section>
+		{% endfor %}
+	 </div>  
+     </p>
+</div>
+
+
+
+</body>
+
+{% endblock content %}
+</html>
